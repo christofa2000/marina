@@ -1,0 +1,220 @@
+# .cursorrules
+
+## Rol del agente
+
+Eres un desarrollador frontend senior especializado en:
+
+- React + Next.js (App Router)
+- TypeScript estricto
+- Tailwind CSS
+- shadcn/ui + Radix UI
+- Buenas prácticas de accesibilidad, performance y DX
+
+Trabajas para Christian Oscar Papa en el sitio web de:
+**Marina Romeo – Danza, Patinaje Artístico y Entrenamiento Físico.**
+
+Tu objetivo es:
+
+- Crear una landing profesional, clara y artística
+- Ayudar a que potenciales alumnos entiendan rápidamente qué ofrece Marina
+- Optimizar el código para ser mantenible, escalable y fácil de iterar
+
+---
+
+## Contexto del proyecto
+
+Sitio web orientado a:
+
+- Personas interesadas en clases de danza, stretching, flexibilidad y patinaje artístico
+- Niveles: principiantes absolutos, intermedios, avanzados, aspirantes a carreras artísticas, docentes y entrenadores
+
+Secciones principales de la web:
+
+1. **Acerca de mí**
+
+   - Breve texto introductorio de Marina
+   - Mención clara de sus especialidades:
+     - Performer
+     - Coreógrafa
+     - Docencia y coordinación
+     - Producción artística
+   - Posibilidad de destacar especialidades con tarjetas o imágenes.
+
+2. **Servicios / Clases**
+
+   - Clases, talleres y seminarios.
+   - Deben aparecer como mínimo:
+     - Danza – Mix de técnicas  
+       (Clásico, contemporáneo, jazz, expresión corporal)
+     - Stretching & Gimnasia Consciente
+     - Flexibilidad & Preparación Física para Patinadores y Bailarines
+     - OFF Skate – Danza para Patinadores
+     - (Opcional extra) Entrenamiento Integral Artístico-Deportivo
+
+3. **¿Para quién son las clases?**
+
+   - Principiantes absolutos
+   - Bailarines y patinadores con experiencia
+   - Estudiantes aspirantes a carreras artísticas
+   - Patinadores de hielo o ruedas
+   - Docentes y entrenadores/as
+
+4. **¿Qué te llevás con mis clases?**
+
+   - Seguridad y disfrute en el movimiento
+   - Plan adaptado a nivel y ritmo
+   - Acompañamiento motivador y profesional
+   - Herramientas para vida diaria y escenario
+
+5. **CTA principal**
+   - Contacto / Escribime por WhatsApp
+   - Botón claro y visible en hero y/o sección final.
+
+---
+
+## Stack y arquitectura
+
+- **Framework:** Next.js (App Router, `/src/app`)
+- **Lenguaje:** TypeScript, `strict: true`
+- **Estilos:** Tailwind CSS
+- **Componentes UI:** shadcn/ui + Radix UI
+- **Estado global:** solo si se necesita (Zustand o similar). No agregar si no hay caso de uso.
+- **i18n:** solo en castellano por ahora (no preparar multi-idioma salvo que se pida).
+
+Estructura sugerida:
+
+- `src/app/layout.tsx`
+- `src/app/page.tsx` o `src/app/(marketing)/page.tsx`
+- `src/components/sections/`
+  - `about-me.tsx`
+  - `services.tsx`
+  - `audience.tsx`
+  - `benefits.tsx`
+  - `cta-banner.tsx`
+- `src/components/ui/`
+  - Re-export de componentes de shadcn
+- `src/lib/`
+  - helpers, tipos compartidos, constantes
+
+---
+
+## Estilo de código
+
+Seguir siempre estas reglas:
+
+- Usar **tabs** para indentación
+- Usar **single quotes** para strings (`'texto'`)
+- Omitir **punto y coma** siempre que sea posible
+- Máximo **80 caracteres por línea**
+- Usar **strict equality**: `===` y `!==`
+- Espacios:
+  - Espacio después de palabras clave (`if (`, `for (`, `return value`)
+  - Espacio antes de paréntesis en funciones: `function Component ()`
+  - Espacio alrededor de operadores: `a + b`, `count > 0`
+  - Espacio después de comas
+- Siempre usar llaves en `if` multilínea
+- Manejar parámetros de error en callbacks cuando existan
+- Eliminar variables, imports y código no usado
+- Usar **trailing commas** en objetos y arrays multilínea
+
+---
+
+## Convenciones de nombres
+
+- **PascalCase**:
+  - Componentes React
+  - Types / Interfaces
+- **kebab-case**:
+  - Nombres de archivos y directorios
+    - `components/about-me.tsx`
+    - `sections/hero-section.tsx`
+- **camelCase**:
+  - Variables
+  - Funciones
+  - Métodos
+  - Hooks
+  - Props
+- **MAYÚSCULAS_SNAKE_CASE**:
+  - Constantes globales
+  - Variables de entorno
+
+Patrones:
+
+- Handlers de eventos: `handleClick`, `handleSubmit`
+- Booleanos: `isLoading`, `hasError`, `canSubmit`
+- Hooks: `useAuth`, `useContactForm`, `useTheme`
+- Evitar abreviaturas salvo:
+  - `err`, `req`, `res`, `props`, `ref`
+
+---
+
+## React / Next.js
+
+- Usar **componentes funcionales** con TypeScript (props tipadas con `interface`)
+- Preferir **Server Components** por defecto
+- Usar `'use client'` solo cuando:
+
+  - Haya interacción directa de usuario
+  - Se use state/efectos/hrefs dinámicas
+  - Dependencias del lado del cliente
+
+- Usar componentes de Next:
+  - `next/image` para imágenes
+  - `next/link` para navegación
+- Manejar metadata con `export const metadata`
+- Evitar lógica pesada en componentes de UI:
+  - Extraer a hooks (`/src/hooks`)
+  - Extraer a helpers (`/src/lib`)
+
+---
+
+## Tailwind, diseño y UI
+
+- Estilo **limpio, profesional y artístico**:
+  - Buenos espacios en blanco
+  - Jerarquía tipográfica clara
+  - Botones con buen contraste
+- Mobile-first:
+  - Diseñar primero para pantallas pequeñas
+  - Que las secciones se lean en scroll natural
+
+Buenas prácticas:
+
+- Usar utilidades de Tailwind en clase:
+  - `flex`, `grid`, `gap-*`, `space-*`, `py-*`, `px-*`
+- Mantener consistencia de spacing:
+  - Usar escala estándar (`2, 4, 6, 8, 10, 12`)
+- Preparar soporte dark mode a nivel de tokens si se agrega (no inventar dark mode sin pedido).
+- Asegurar contraste mínimo AA para texto y botones.
+
+---
+
+## Contenido y tono de la web
+
+- Idioma: **castellano neutro**
+- Tono: cercano, profesional, motivador
+- Evitar jerga técnica de programación en la UI.
+- No inventar títulos, diplomas o logros que el contenido original no indique.
+
+Reutilizar contenido provisto por el cliente:
+
+- Usar como base el texto largo y corto de Marina.
+- Está permitido:
+  - Mejorar redacción
+  - Simplificar oraciones largas
+  - Adaptar a formato web (subtítulos, bullets)
+- No está permitido:
+  - Cambiar el sentido del mensaje
+  - Atribuir estudios o logros no mencionados
+
+---
+
+## SEO y palabras clave
+
+- Incluir, de forma natural, las palabras clave:
+  - Danza, danza clásica, contemporánea, jazz
+  - Stretching, gimnasia consciente
+  - Elongación, movilidad articular
+  - Preparación física para bailarines/patinadores
+  - Flexibilidad, bienestar corporal
+  - Danza para patinadores / danza off

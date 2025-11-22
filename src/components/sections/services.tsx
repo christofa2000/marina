@@ -1,16 +1,12 @@
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card'
+import ServiceCard from '@/components/ui/service-card'
 
 interface Service {
 	title: string
 	description: string
 	highlights: string[]
 	tags: string[]
+	image: string
+	audience: string[]
 }
 
 const services: Service[] = [
@@ -23,6 +19,12 @@ const services: Service[] = [
 			'Técnica y expresión para todos los niveles',
 		],
 		tags: ['Todos los niveles', 'Entrenamiento artístico'],
+		image: '/images/services/dance-mix.png',
+		audience: [
+			'Principiantes absolutos que quieren aprender desde cero.',
+			'Bailarines intermedios y avanzados que buscan perfeccionar su técnica.',
+			'Personas que buscan una actividad física creativa y expresiva.',
+		],
 	},
 	{
 		title: 'Stretching & Gimnasia Consciente',
@@ -33,6 +35,12 @@ const services: Service[] = [
 			'Ideal para personas sedentarias',
 		],
 		tags: ['Para todo público', 'Bienestar'],
+		image: '/images/services/stretching.png',
+		audience: [
+			'Personas sedentarias que quieren mejorar su postura y movilidad.',
+			'Quienes buscan aliviar dolores corporales y tensiones.',
+			'Cualquier persona interesada en el bienestar físico y mental.',
+		],
 	},
 	{
 		title:
@@ -44,6 +52,12 @@ const services: Service[] = [
 			'Prevención de lesiones',
 		],
 		tags: ['Nivel intermedio-avanzado', 'Preparación física'],
+		image: '/images/services/flexibility.png',
+		audience: [
+			'Patinadores y bailarines que compiten o se presentan en shows.',
+			'Estudiantes de carreras artísticas que necesitan mejorar su flexibilidad.',
+			'Deportistas que buscan complementar su entrenamiento con trabajo de líneas y extensión.',
+		],
 	},
 	{
 		title: 'OFF Skate – Danza para Patinadores',
@@ -54,57 +68,41 @@ const services: Service[] = [
 			'Perfeccionamiento de interpretación',
 		],
 		tags: ['Patinadores', 'Entrenamiento artístico'],
+		image: '/images/services/off-skate.png',
+		audience: [
+			'Patinadores de hielo o ruedas (artístico).',
+			'Competidores que buscan mejorar su puntaje en componentes artísticos.',
+			'Entrenadores que quieren herramientas para sus alumnos.',
+		],
 	},
 ]
 
-export function Services () {
+export function Services() {
 	return (
 		<section
 			id='servicios'
-			className='py-24 md:py-32 lg:py-40 px-4 md:px-6 bg-background'
+			className='py-24 md:py-32 lg:py-40 px-4 md:px-6 bg-background overflow-hidden'
 		>
-			<div className='max-w-7xl mx-auto space-y-16 md:space-y-20'>
-				<div className='text-center'>
-					<h2 className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold tracking-tight text-foreground uppercase mb-4'>
+			<div className='max-w-7xl mx-auto space-y-20 md:space-y-32'>
+				<div className='text-center space-y-6'>
+					<h2 className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold tracking-tight text-foreground uppercase'>
 						Clases que{' '}
 						<span className='text-[#D7B27A]'>
 							Ofrezco
 						</span>
 					</h2>
 					<p className='text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto'>
-						Programas adaptados a tu nivel y objetivos
+						Programas adaptados a tu nivel y objetivos, diseñados para potenciar tu movimiento.
 					</p>
 				</div>
-				<div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10'>
-					{services.map((service) => (
-						<Card
+
+				<div className='flex flex-col'>
+					{services.map((service, index) => (
+						<ServiceCard
 							key={service.title}
-							className='h-full bg-card border border-border/30 hover:border-[#D7B27A]/50 transition-all duration-300 hover:shadow-xl'
-						>
-							<CardHeader className='space-y-4'>
-								<div className='flex flex-wrap gap-2'>
-									{service.tags.map((tag) => (
-										<span
-											key={tag}
-											className='text-xs px-3 py-1 rounded-md bg-[#D7B27A]/10 text-[#D7B27A] border border-[#D7B27A]/30 font-medium'
-										>
-											{tag}
-										</span>
-									))}
-								</div>
-								<CardTitle className='text-2xl md:text-3xl font-serif text-card-foreground leading-tight'>
-									{service.title}
-								</CardTitle>
-								<CardDescription className='text-base text-muted-foreground'>
-									{service.highlights.join(' • ')}
-								</CardDescription>
-							</CardHeader>
-							<CardContent>
-								<p className='text-base leading-relaxed text-card-foreground/90'>
-									{service.description}
-								</p>
-							</CardContent>
-						</Card>
+							service={service}
+							index={index}
+						/>
 					))}
 				</div>
 			</div>

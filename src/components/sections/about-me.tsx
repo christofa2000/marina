@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export function AboutMe () {
+export function AboutMe() {
 	return (
 		<section
 			id='acerca-de'
@@ -14,13 +14,13 @@ export function AboutMe () {
 						<span className='text-[#D7B27A]'>
 							Mí
 						</span>
-						</h2>
+					</h2>
 				</div>
 
 				{/* Layout con imágenes laterales y texto central */}
 				<div className='relative'>
 					{/* Imagen izquierda - Parcialmente recortada */}
-					<div className='hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[30%] w-[35%] aspect-[3/4] opacity-40 pointer-events-none'>
+					<div className='hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[30%] w-[35%] aspect-[3/4] pointer-events-none'>
 						<div className='relative w-full h-full'>
 							<Image
 								src='/1 .jpeg'
@@ -80,7 +80,7 @@ export function AboutMe () {
 					</div>
 
 					{/* Imagen derecha - Parcialmente recortada */}
-					<div className='hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[30%] w-[35%] aspect-[3/4] opacity-40 pointer-events-none'>
+					<div className='hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[30%] w-[35%] aspect-[3/4] pointer-events-none'>
 						<div className='relative w-full h-full'>
 							<Image
 								src='/2.jpeg'
@@ -135,7 +135,7 @@ export function AboutMe () {
 								className='object-cover transition-transform duration-700 ease-out group-hover:scale-110 grayscale group-hover:grayscale-0'
 								sizes='(max-width: 768px) 100vw, 33vw'
 							/>
-									</div>
+						</div>
 					</div>
 				</div>
 			</div>

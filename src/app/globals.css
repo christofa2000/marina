@@ -4,39 +4,48 @@
 	:root {
 		/* Paleta Black & Peach - Movimiento Moderno */
 		/* Negro carbón como fondo principal */
-		--background: 0 0% 5%; /* #0D0D0D */
-		--foreground: 0 0% 98%; /* #FBFAF7 - Blanco perla para texto */
+		--background: 0 0% 12.2%;
+		/* #1F1F1F - Graphite Black */
+		--foreground: 0 0% 98%;
+		/* #FBFAF7 - Blanco perla para texto */
 
 		/* Cards y popovers sobre fondo oscuro */
-		--card: 0 0% 8%; /* Gris muy oscuro para cards */
+		--card: 0 0% 15%;
+		/* Un poco más claro que el fondo */
 		--card-foreground: 0 0% 98%;
 
-		--popover: 0 0% 8%;
+		--popover: 0 0% 15%;
 		--popover-foreground: 0 0% 98%;
 
 		/* Primary: durazno suave para botones principales */
-		--primary: 25 80% 80%; /* #F9C8A3 */
-		--primary-foreground: 0 0% 5%; /* Texto oscuro sobre durazno */
+		--primary: 25 80% 80%;
+		/* #F9C8A3 */
+		--primary-foreground: 0 0% 5%;
+		/* Texto oscuro sobre durazno */
 
 		/* Secondary: dorado suave para acentos */
-		--secondary: 38 50% 65%; /* #D7B27A */
+		--secondary: 38 50% 65%;
+		/* #D7B27A */
 		--secondary-foreground: 0 0% 5%;
 
 		/* Muted: grises oscuros para secciones alternadas */
-		--muted: 0 0% 10%; /* #1A1A1A */
+		--muted: 0 0% 15%;
+		/* #262626 */
 		--muted-foreground: 0 0% 70%;
 
 		/* Accent: piel rosada para detalles sutiles */
-		--accent: 25 60% 85%; /* #F2D4C1 */
+		--accent: 25 60% 85%;
+		/* #F2D4C1 */
 		--accent-foreground: 0 0% 5%;
 
 		--destructive: 0 84.2% 60.2%;
 		--destructive-foreground: 0 0% 98%;
 
 		/* Bordes sutiles */
-		--border: 0 0% 20%;
-		--input: 0 0% 20%;
-		--ring: 38 50% 65%; /* Dorado para focus rings */
+		--border: 0 0% 25%;
+		--input: 0 0% 25%;
+		--ring: 38 50% 65%;
+		/* Dorado para focus rings */
 
 		--radius: 0.5rem;
 	}
@@ -70,12 +79,18 @@
 	--font-mono: var(--font-geist-mono);
 
 	/* Brand colors - Paleta extendida para uso directo */
-	--color-brand-50: #FBFAF7; /* Blanco perla */
-	--color-brand-100: #F9C8A3; /* Durazno suave */
-	--color-brand-200: #F2D4C1; /* Piel rosada */
-	--color-brand-400: #F9C8A3; /* Durazno (alias) */
-	--color-brand-500: #D7B27A; /* Dorado suave */
-	--color-brand-900: #0D0D0D; /* Negro carbón */
+	--color-brand-50: #FBFAF7;
+	/* Blanco perla */
+	--color-brand-100: #F9C8A3;
+	/* Durazno suave */
+	--color-brand-200: #F2D4C1;
+	/* Piel rosada */
+	--color-brand-400: #F9C8A3;
+	/* Durazno (alias) */
+	--color-brand-500: #D7B27A;
+	/* Dorado suave */
+	--color-brand-900: #1F1F1F;
+	/* Graphite Black */
 
 	/* Muted variants */
 	--color-muted-100: #1A1A1A;
